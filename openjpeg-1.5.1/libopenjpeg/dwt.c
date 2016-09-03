@@ -31,7 +31,8 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifdef __SSE__
+ //#ifdef __SSE__
+#if (defined(_M_AMD64) || defined(_M_X64) || _M_IX86_FP == 2)
 #include <xmmintrin.h>
 #endif
 
@@ -650,8 +651,8 @@ static void v4dwt_interleave_v(v4dwt_t* restrict v , float* restrict a , int x){
 	}
 }
 
-#ifdef __SSE__
-
+//#ifdef __SSE__
+#if (defined(_M_AMD64) || defined(_M_X64) || _M_IX86_FP == 2)
 static void v4dwt_decode_step1_sse(v4* w, int count, const __m128 c){
 	__m128* restrict vw = (__m128*) w;
 	int i;
@@ -784,7 +785,8 @@ static void v4dwt_decode(v4dwt_t* restrict dwt){
 		a = 1;
 		b = 0;
 	}
-#ifdef __SSE__
+	//#ifdef __SSE__
+#if (defined(_M_AMD64) || defined(_M_X64) || _M_IX86_FP == 2)
 	v4dwt_decode_step1_sse(dwt->wavelet+a, dwt->sn, _mm_set1_ps(K));
 	v4dwt_decode_step1_sse(dwt->wavelet+b, dwt->dn, _mm_set1_ps(c13318));
 	v4dwt_decode_step2_sse(dwt->wavelet+b, dwt->wavelet+a+1, dwt->sn, int_min(dwt->sn, dwt->dn-a), _mm_set1_ps(dwt_delta));
