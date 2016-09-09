@@ -29,8 +29,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
- //#ifdef __SSE__
-#if (defined(_M_AMD64) || defined(_M_X64) || _M_IX86_FP == 2)
+#ifdef __SSE__
 #include <xmmintrin.h>
 #endif
 
@@ -149,8 +148,7 @@ void mct_decode_real(
 		int n)
 {
 	int i;
-//#ifdef __SSE__
-#if (defined(_M_AMD64) || defined(_M_X64) || _M_IX86_FP == 2)
+#ifdef __SSE__
 	__m128 vrv, vgu, vgv, vbu;
 	vrv = _mm_set1_ps(1.402f);
 	vgu = _mm_set1_ps(0.34413f);
