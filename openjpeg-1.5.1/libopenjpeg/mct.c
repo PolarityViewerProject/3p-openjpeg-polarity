@@ -29,7 +29,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifdef __SSE__
+#ifdef MANUAL_SSE
 #include <xmmintrin.h>
 #endif
 
@@ -148,7 +148,7 @@ void mct_decode_real(
 		int n)
 {
 	int i;
-#ifdef __SSE__
+#ifdef MANUAL_SSE
 	__m128 vrv, vgu, vgv, vbu;
 	vrv = _mm_set1_ps(1.402f);
 	vgu = _mm_set1_ps(0.34413f);
