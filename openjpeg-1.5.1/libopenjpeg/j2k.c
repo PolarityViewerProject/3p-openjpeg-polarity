@@ -1898,7 +1898,7 @@ opj_image_t* j2k_decode(opj_j2k_t *j2k, opj_cio_t *cio, opj_codestream_info_t *c
 		}
 		/* Check if the decoding is limited to the main header*/
 		if (e->id == J2K_MS_SOT && j2k->cp->limit_decoding == LIMIT_TO_MAIN_HEADER) {
-			opj_event_msg(cinfo, EVT_INFO, "Main Header decoded.\n");
+			//opj_event_msg(cinfo, EVT_INFO, "Main Header decoded.\n");
 			return image;
 		}		
 
