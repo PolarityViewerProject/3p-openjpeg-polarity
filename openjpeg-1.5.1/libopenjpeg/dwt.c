@@ -253,8 +253,8 @@ static void dwt_decode_1_(int *a, int dn, int sn, int cas) {
 #elif defined (_OPENMP)
 #pragma omp parallel
 #else
-#pragma loop(hint_parallel(2))
-#pragma loop(ivdep)
+//#pragma loop(hint_parallel(2))
+//#pragma loop(ivdep)
 #endif
 			for (i = 0; i < sn; i++) S(i) -= (D_(i - 1) + D_(i) + 2) >> 2;
 #if defined(__ICC)
@@ -262,8 +262,8 @@ static void dwt_decode_1_(int *a, int dn, int sn, int cas) {
 #elif defined (_OPENMP)
 #pragma omp parallel
 #else
-#pragma loop(hint_parallel(2))
-#pragma loop(ivdep)
+//#pragma loop(hint_parallel(2))
+//#pragma loop(ivdep)
 #endif
 			for (i = 0; i < dn; i++) D(i) += (S_(i) + S_(i + 1)) >> 1;
 		}
@@ -276,8 +276,8 @@ static void dwt_decode_1_(int *a, int dn, int sn, int cas) {
 #elif defined (_OPENMP)
 #pragma omp parallel
 #else
-#pragma loop(hint_parallel(2))
-#pragma loop(ivdep)
+//#pragma loop(hint_parallel(2))
+#//pragma loop(ivdep)
 #endif
 			for (i = 0; i < sn; i++) D(i) -= (SS_(i) + SS_(i + 1) + 2) >> 2;
 #if defined(__ICC)
@@ -285,8 +285,8 @@ static void dwt_decode_1_(int *a, int dn, int sn, int cas) {
 #elif defined (_OPENMP)
 #pragma omp parallel
 #else
-#pragma loop(hint_parallel(2))
-#pragma loop(ivdep)
+//#pragma loop(hint_parallel(2))
+//#pragma loop(ivdep)
 #endif
 			for (i = 0; i < dn; i++) S(i) += (DD_(i) + DD_(i - 1)) >> 1;
 		}

@@ -83,8 +83,8 @@ void mct_decode(
 #elif defined (_OPENMP)
 #pragma omp parallel
 #else
-#pragma loop(hint_parallel(4))
-#pragma loop(ivdep)
+//#pragma loop(hint_parallel(4))
+//#pragma loop(ivdep)
 #endif
 	for (i = 0; i < n; ++i) {
 		int y = c0[i];
@@ -122,8 +122,8 @@ void mct_encode_real(
 #elif defined (_OPENMP)
 #pragma omp parallel
 #else
-#pragma loop(hint_parallel(4))
-#pragma loop(ivdep)
+//#pragma loop(hint_parallel(4))
+//#pragma loop(ivdep)
 #endif
 	for(i = 0; i < n; ++i) {
 		int r = c0[i];
