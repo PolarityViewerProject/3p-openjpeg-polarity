@@ -5,6 +5,7 @@
  * Copyright (c) 2002-2003, Yannick Verschueren
  * Copyright (c) 2003-2007, Francois-Olivier Devaux and Antonin Descampe
  * Copyright (c) 2005, Herve Drolon, FreeImage Team
+ * Copyright (c) 2010, Lee Quick, www.kirstensviewer.com
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -380,10 +381,11 @@ void mqc_init_enc(opj_mqc_t *mqc, unsigned char *bp) {
 	mqc->a = 0x8000;
 	mqc->c = 0;
 	mqc->bp = bp - 1;
+	*(mqc->bp) = 0;
 	mqc->ct = 12;
-	if (*mqc->bp == 0xff) {
+	/*if (*mqc->bp == 0xff) {
 		mqc->ct = 13;
-	}
+	}*/
 	mqc->start = bp;
 }
 
