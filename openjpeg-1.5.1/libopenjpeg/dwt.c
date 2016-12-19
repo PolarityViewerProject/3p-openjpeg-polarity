@@ -163,52 +163,17 @@ static const double dwt_norms_real[4][10] = {
 /* </summary>                            */ 
 static void dwt_deinterleave_h(int *a, int *b, int dn, int sn, int cas) {
 	int i;
-	int * l_dest = b;
-	int * l_src = a+cas;
-    for 
-		(i=0; i<sn; ++i) 
-	{
-		*l_dest++ = *l_src;
-		l_src += 2;
-	}
-	l_dest = b + sn;
-	l_src = a + 1 - cas;
-    for 
-		(i=0; i<dn; ++i) 
-	{
-		*l_dest++=*l_src;
-		l_src += 2;
-	}
+    for (i=0; i<sn; i++) b[i]=a[2*i+cas];
+    for (i=0; i<dn; i++) b[sn+i]=a[(2*i+1-cas)];
 }
 
 /* <summary>                             */  
 /* Forward lazy transform (vertical).    */
 /* </summary>                            */ 
 static void dwt_deinterleave_v(int *a, int *b, int dn, int sn, int x, int cas) {
-    int i = sn;
-	int * l_dest = b;
-	int * l_src = a+cas;
-
-    while 
-		(i--) 
-	{
-		*l_dest = *l_src;
-		l_dest += x;
-		l_src += 2;
-		/* b[i*x]=a[2*i+cas]; */
-	}
-	l_dest = b + sn * x;
-	l_src = a + 1 - cas;
-	
-	i = dn;
-    while 
-		(i--) 
-	{
-		*l_dest = *l_src;
-		l_dest += x;
-		l_src += 2;
-		/*b[(sn+i)*x]=a[(2*i+1-cas)];*/
-	}
+    int i;
+    for (i=0; i<sn; i++) b[i*x]=a[2*i+cas];
+    for (i=0; i<dn; i++) b[(sn+i)*x]=a[(2*i+1-cas)];
 }
 
 /* <summary>                             */
@@ -655,13 +620,13 @@ static void v4dwt_interleave_h(v4dwt_t* restrict w, float* restrict a, int x, in
 			int j = i;
 			bi[i*8    ] = a[j];
 			j += x;
-			if(j >= size) continue;
+			if(j > size) continue;
 			bi[i*8 + 1] = a[j];
 			j += x;
-			if(j >= size) continue;
+			if(j > size) continue;
 			bi[i*8 + 2] = a[j];
 			j += x;
-			if(j >= size) continue;
+			if(j > size) continue;
 			bi[i*8 + 3] = a[j];
 		}
 		}
