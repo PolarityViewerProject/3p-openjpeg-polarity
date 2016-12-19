@@ -200,8 +200,8 @@ ELSEIF(${CMAKE_C_COMPILER_ID} MATCHES "GNU")
   # Do not use ffast-math for all build, it would produce incorrect results, only set for release:
   SET(CMAKE_C_FLAGS_RELEASE "-ffast-math ${CMAKE_C_FLAGS_RELEASE}")
 ELSEIF (${CMAKE_C_COMPILER_ID} MATCHES "MSVC")
-  SET(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} /Ox /GF /GL /Gy /Gw /Gr /arch:SSE2 /fp:fast /MD")
-  SET(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} /OPT:REF /OPT:ICF=5")
+  SET(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} /Ox /GF /GL /Gy /Gw /Gr /arch:SSE2 /fp:fast /MD /Qpar")
+  SET(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} /OPT:REF /OPT:ICF=5 /LTCG /INCREMENTAL:NO")
 ENDIF(${CMAKE_C_COMPILER_ID} MATCHES "Clang" OR ${CMAKE_C_COMPILER_ID} MATCHES "AppleClang")
 
 #-----------------------------------------------------------------------------
