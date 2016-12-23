@@ -7,7 +7,7 @@ set -x
 # make errors fatal
 set -e
 
-OPENJPEG_VERSION="1.5.1"
+OPENJPEG_VERSION="1.5.1-polarity"
 OPENJPEG_SOURCE_DIR="openjpeg-1.5.1"
 
 if [ -z "$AUTOBUILD" ] ; then 
@@ -32,7 +32,7 @@ pushd "$OPENJPEG_SOURCE_DIR"
         "windows")
             load_vsvars
 
-            cmake . -G"Visual Studio 14" -DCMAKE_INSTALL_PREFIX=$stage -DCMAKE_SYSTEM_VERSION="10.0.14393.0"
+            cmake . -G"Visual Studio 14" -DCMAKE_INSTALL_PREFIX=$stage -DCMAKE_SYSTEM_VERSION="10.0.14393.0" -DOPENJPEG_VERSION="${OPENJPEG_VERSION}"
             
             build_sln "OPENJPEG.sln" "Release" "Win32"
             build_sln "OPENJPEG.sln" "Debug" "Win32"
