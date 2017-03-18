@@ -1,3 +1,5 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 /* minigzip.c -- simulate gzip using the zlib compression library
  * Copyright (C) 1995-2006, 2010 Jean-loup Gailly.
  * For conditions of distribution and use, see copyright notice in zlib.h

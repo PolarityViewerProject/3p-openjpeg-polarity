@@ -1,3 +1,5 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 /*
  * $Id: sock_manager.c 1736 2012-07-29 15:21:39Z mathieu.malaterre@gmail.com $
  *

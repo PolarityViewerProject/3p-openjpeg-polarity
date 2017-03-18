@@ -1,3 +1,5 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 /* $Id: tif_ojpeg.c,v 1.24.2.6 2010-06-08 23:29:51 bfriesen Exp $ */
 
 /* WARNING: The type of JPEG encapsulation defined by the TIFF Version 6.0

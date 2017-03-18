@@ -1,3 +1,5 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 /* mj2_to_metadata.c */
 /* Dump MJ2, JP2 metadata (partial so far) to xml file */
 /* Contributed to Open JPEG by Glenn Pearson, contract software developer, U.S. National Library of Medicine.

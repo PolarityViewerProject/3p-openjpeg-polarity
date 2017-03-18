@@ -1,3 +1,5 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 /* zutil.c -- target dependent utility functions for the compression library
  * Copyright (C) 1995-2005, 2010 Jean-loup Gailly.
  * For conditions of distribution and use, see copyright notice in zlib.h

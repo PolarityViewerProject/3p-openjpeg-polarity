@@ -1,3 +1,5 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 /* trees.c -- output deflated data using Huffman coding
  * Copyright (C) 1995-2010 Jean-loup Gailly
  * detect_data_type() function provided freely by Cosmin Truta, 2006

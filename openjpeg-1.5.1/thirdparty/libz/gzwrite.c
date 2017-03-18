@@ -1,3 +1,5 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 /* gzwrite.c -- zlib functions for writing gzip files
  * Copyright (C) 2004, 2005, 2010 Mark Adler
  * For conditions of distribution and use, see copyright notice in zlib.h

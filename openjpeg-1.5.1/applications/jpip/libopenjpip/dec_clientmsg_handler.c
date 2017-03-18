@@ -1,3 +1,5 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 /*
  * $Id: dec_clientmsg_handler.c 1358 2012-01-30 09:34:48Z mathieu.malaterre $
  *

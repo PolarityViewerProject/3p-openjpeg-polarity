@@ -1,3 +1,5 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 /* $Id: tif_fax3.c,v 1.43.2.10 2010-06-09 17:16:58 bfriesen Exp $ */
 
 /*

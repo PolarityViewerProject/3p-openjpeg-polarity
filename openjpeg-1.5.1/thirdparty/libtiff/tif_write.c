@@ -1,3 +1,5 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 /* $Id: tif_write.c,v 1.22.2.5 2010-06-08 18:50:43 bfriesen Exp $ */
 
 /*

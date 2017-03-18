@@ -1,3 +1,5 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 /*
  * $Id: jpip_parser.c 1481 2012-03-02 08:44:04Z mathieu.malaterre $
  *
