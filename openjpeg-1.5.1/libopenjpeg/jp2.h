@@ -98,10 +98,9 @@ Collector for ICC profile, palette, component mapping, channel description
 typedef struct opj_jp2_color
 {
     unsigned char *icc_profile_buf;
-    int icc_profile_len;
-
-    opj_jp2_cdef_t *jp2_cdef;
-    opj_jp2_pclr_t *jp2_pclr;
+	opj_jp2_cdef_t *jp2_cdef;
+	opj_jp2_pclr_t *jp2_pclr;
+	int icc_profile_len;
     unsigned char jp2_has_colr;
 } opj_jp2_color_t;
 

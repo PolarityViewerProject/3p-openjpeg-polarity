@@ -476,20 +476,18 @@ Byte input-output stream (CIO)
 typedef struct opj_cio {
 	/** codec context */
 	opj_common_ptr cinfo;
-
-	/** open mode (read/write) either OPJ_STREAM_READ or OPJ_STREAM_WRITE */
-	int openmode;
 	/** pointer to the start of the buffer */
 	unsigned char *buffer;
-	/** buffer size in bytes */
-	int length;
-
 	/** pointer to the start of the stream */
 	unsigned char *start;
 	/** pointer to the end of the stream */
 	unsigned char *end;
 	/** pointer to the current position */
 	unsigned char *bp;
+	/** buffer size in bytes */
+	int length;
+	/** open mode (read/write) either OPJ_STREAM_READ or OPJ_STREAM_WRITE */
+	int openmode;
 } opj_cio_t;
 
 /* 

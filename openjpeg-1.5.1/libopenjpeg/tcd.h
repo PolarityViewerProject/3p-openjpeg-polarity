@@ -138,10 +138,10 @@ typedef struct opj_tcd_resolution {
 FIXME: documentation
 */
 typedef struct opj_tcd_tilecomp {
-  int x0, y0, x1, y1;		/* dimension of component : left upper corner (x0, y0) right low corner (x1,y1) */
-  int numresolutions;		/* number of resolutions level */
   opj_tcd_resolution_t *resolutions;	/* resolutions information */
   int *data;			/* data of the component */
+  int x0, y0, x1, y1;		/* dimension of component : left upper corner (x0, y0) right low corner (x1,y1) */
+  int numresolutions;		/* number of resolutions level */
   int numpix;			/* add fixed_quality */
 } opj_tcd_tilecomp_t;
 

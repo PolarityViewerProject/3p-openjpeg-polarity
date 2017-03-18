@@ -6,8 +6,8 @@
 typedef struct opj_option
 {
 	const char *name;
-	int has_arg;
 	int *flag;
+	int has_arg;
 	int val;
 }opj_option_t;
 
