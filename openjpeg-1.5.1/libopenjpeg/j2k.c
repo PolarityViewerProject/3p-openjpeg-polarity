@@ -624,7 +624,6 @@ static void j2k_read_siz(opj_j2k_t *j2k) {
 }
 
 static void j2k_write_com(opj_j2k_t *j2k) {
-	unsigned int i;
 	int lenp, len;
 
 	if(j2k->cp->comment) {
@@ -635,7 +634,8 @@ static void j2k_write_com(opj_j2k_t *j2k) {
 		lenp = cio_tell(cio);
 		cio_skip(cio, 2);
 		cio_write(cio, 1, 2);		/* General use (IS 8859-15:1999 (Latin) values) */
-		for (i = 0; i < strlen(comment); i++) {
+		size_t comment_length = strlen(comment);
+		for (size_t i = 0; i < comment_length; i++) {
 			cio_write(cio, comment[i], 1);
 		}
 		len = cio_tell(cio) - lenp;
@@ -1474,7 +1474,7 @@ static void j2k_write_sod(opj_j2k_t *j2k, void *tile_coder) {
 }
 
 static void j2k_read_sod(opj_j2k_t *j2k) {
-	int len, truncate = 0, i;
+	int truncate = 0;
 	unsigned char *data = NULL, *data_ptr = NULL;
 
 	opj_cio_t *cio = j2k->cio;
@@ -1489,7 +1489,7 @@ static void j2k_read_sod(opj_j2k_t *j2k) {
 		j2k->cstr_info->packno = 0;
 	}
 	
-	len = int_min(j2k->eot - cio_getbp(cio), cio_numbytesleft(cio) + 1);
+	size_t len = int_min(j2k->eot - cio_getbp(cio), cio_numbytesleft(cio) + 1);
 
 	if (len == cio_numbytesleft(cio) + 1) {
 		truncate = 1;		/* Case of a truncate codestream */
@@ -1499,7 +1499,7 @@ static void j2k_read_sod(opj_j2k_t *j2k) {
 	data = (unsigned char*) opj_realloc(data, (j2k->tile_len[curtileno] + len) * sizeof(unsigned char));
 
 	data_ptr = data + j2k->tile_len[curtileno];
-	for (i = 0; i < len; i++) {
+	for (auto i = 0; i < len; i++) {
 		data_ptr[i] = cio_read(cio, 1);
 	}
 

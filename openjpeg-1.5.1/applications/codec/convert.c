@@ -1403,14 +1403,13 @@ int imagetopgx(opj_image_t * image, const char *outfile) {
 	int w, h;
 	int i, j, compno;
 	FILE *fdest = NULL;
-
+	const size_t olen = strlen(outfile);
 	for (compno = 0; compno < image->numcomps; compno++) {
 		opj_image_comp_t *comp = &image->comps[compno];
 		char bname[256]; /* buffer for name */
     char *name = bname; /* pointer */
     int nbytes = 0;
     size_t res;
-    const size_t olen = strlen(outfile);
     const size_t dotpos = olen - 4;
     const size_t total = dotpos + 1 + 1 + 4; /* '-' + '[1-3]' + '.pgx' */
     if( outfile[dotpos] != '.' ) {
