@@ -171,6 +171,16 @@ typedef struct opj_tcd_image {
 Tile coder/decoder
 */
 typedef struct opj_tcd {
+	/** image */
+	opj_image_t *image;
+	/** info on each image tile */
+	opj_tcd_image_t *tcd_image;
+	/** coding parameters */
+	opj_cp_t *cp;
+	/** pointer to the current encoded/decoded tile */
+	opj_tcd_tile_t *tcd_tile;
+	/** coding/decoding parameters common to all tiles */
+	opj_tcp_t *tcp;
 	/** Position of the tilepart flag in Progression order*/
 	int tp_pos;
 	/** Tile part number*/
@@ -183,17 +193,6 @@ typedef struct opj_tcd {
 	int cur_pino;
 	/** codec context */
 	opj_common_ptr cinfo;
-
-	/** info on each image tile */
-	opj_tcd_image_t *tcd_image;
-	/** image */
-	opj_image_t *image;
-	/** coding parameters */
-	opj_cp_t *cp;
-	/** pointer to the current encoded/decoded tile */
-	opj_tcd_tile_t *tcd_tile;
-	/** coding/decoding parameters common to all tiles */
-	opj_tcp_t *tcp;
 	/** current encoded/decoded tile */
 	int tcd_tileno;
 	/** Time taken to encode a tile*/

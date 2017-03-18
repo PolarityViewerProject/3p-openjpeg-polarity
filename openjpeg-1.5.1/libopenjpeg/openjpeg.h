@@ -669,6 +669,10 @@ typedef struct opj_tile_info {
 Index structure of the codestream
 */
 typedef struct opj_codestream_info {
+	/** information regarding tiles inside image */
+	opj_tile_info_t *tile;
+	/** list of markers */
+	opj_marker_info_t *marker;
 	/** maximum distortion reduction on the whole image (add for Marcela) */
 	double D_max;
 	/** packet number */
@@ -702,8 +706,6 @@ typedef struct opj_codestream_info {
 /* UniPG>> */
 	/** number of markers */
 	int marknum;
-	/** list of markers */
-	opj_marker_info_t *marker;
 	/** actual size of markers array */
 	int maxmarknum;
 /* <<UniPG */
@@ -713,8 +715,6 @@ typedef struct opj_codestream_info {
 	int main_head_end;
 	/** codestream's size */
 	int codestream_size;
-	/** information regarding tiles inside image */
-	opj_tile_info_t *tile;
 } opj_codestream_info_t;
 
 #ifdef __cplusplus
