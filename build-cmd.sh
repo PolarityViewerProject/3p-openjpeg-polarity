@@ -46,12 +46,14 @@ pushd "$OPENJPEG_SOURCE_DIR"
             cp libopenjpeg/openjpeg.h "$stage/include/openjpeg"
         ;;
         "windows64")
-            load_vsvars
+            # load_vsvars
 
             cmake . -G"Visual Studio 15 Win64" -DCMAKE_INSTALL_PREFIX=$stage -DCMAKE_SYSTEM_VERSION="10.0.14393.0" -DOPENJPEG_VERSION="${OPENJPEG_VERSION}"
             
-            build_sln "OPENJPEG.sln" "Release" "x64"
-            build_sln "OPENJPEG.sln" "Debug" "x64"
+            #build_sln "OPENJPEG.sln" "Release" "x64"
+            #build_sln "OPENJPEG.sln" "Debug" "x64"
+            msbuild.exe "$(cygpath -m "OPENJPEG.sln")" /p:Configuration="Release" /p:Platform="x64" /m
+            msbuild.exe "$(cygpath -m "OPENJPEG.sln")" /p:Configuration="Debug" /p:Platform="x64" /m
             mkdir -p "$stage/lib/debug"
             mkdir -p "$stage/lib/release"
             cp bin/Release/openjpeg{.dll,.lib} "$stage/lib/release"
@@ -108,5 +110,3 @@ pushd "$OPENJPEG_SOURCE_DIR"
     mkdir -p "$stage/LICENSES"
     cp LICENSE "$stage/LICENSES/openjpeg.txt"
 popd
-
-pass
